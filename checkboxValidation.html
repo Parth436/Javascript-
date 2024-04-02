@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title>CheckBox Validation</title>
+        <script>
+            
+            function validate(){
+                var valid = false;
+                if(document.getElementById("JS").checked){
+                    valid = true;
+                }else if(document.getElementById("Java").checked){
+                    valid = true;
+                }else if(document.getElementById("Python").checked){
+                    valid = true;
+                }
+                if(valid){
+                    alert("Validation is successful");
+                }else{
+                    alert("Please select at least one technology");
+                    return false;
+                }
+            }
+           
+        </script>
+    </head>
+    <body>
+        <h3>Select a technology</h3>
+        <form name="myform" action="" onsubmit="return validate()" >
+            
+               
+                <input type="checkbox"  id="JS" value="JS"/>JS
+                <input type="checkbox"  id="Java" value="Java"/>Java
+                <input type="checkbox"  id="Python" value="Python"/>Python
+           
+           
+            <input type="submit" name="submit"/>
+        </form>
+
+    </body>
+</html>

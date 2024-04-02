@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title>Number Validation</title>
+        <script>
+            function validate(){
+                var x = document.myform.num.value;
+                
+                if(isNaN(x) || x < 1 || x > 10){
+                    alert("Please enter a valid number");
+                    return false;
+                }else {
+                    alert("Validation succeeded");
+                    return true;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h3>Enter a number from 1 to 10</h3>
+        <form name="myform" action="" onsubmit="return validate()">
+            Number: <input type="number" name="num"/>
+           
+            <input type="submit" name="register"/>
+        </form>
+
+    </body>
+</html>

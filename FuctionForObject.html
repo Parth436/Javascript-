@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title>Custom function for object creation</title>
+        <script>
+            function blogpost(title,text){
+                this.title = title ;
+                this.text = text ;
+                this.addCategory = addCategory;
+                this.DisplayBlogPost = DisplayBlogPost;
+            }
+            function addCategory(category){
+                this.category = category;
+            }
+            function DisplayBlogPost(){
+            document.write(this.category + "<br/>");
+            document.write(this.title + "<br/>");
+            document.write(this.text + "<br/>");
+            }
+            var bp1 = new blogpost("jquery","Makes JS easier to use");
+            bp1.addCategory("UI Tech");
+            bp1.DisplayBlogPost();
+            var bp2 = new blogpost("Angular","frontend technology to build single page apps");
+            bp2.addCategory("Frontend Tech");
+            bp2.DisplayBlogPost();
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

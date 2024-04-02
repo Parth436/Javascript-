@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title>Text Validation</title>
+        <script>
+            function validate(){
+                var email = document.myform.email.value;
+                var password = document.myform.password.value;
+                if(email.length == 0 && password.length > 0){
+                    alert("Please enter a valid email");
+                    return false;
+                }else if(password.length == 0 && email.length > 0){
+                    alert("Please enter a valid password");
+                    return false;
+                }else if(email.length == 0 && password.length == 0){
+                    alert("Invalid registration");
+                    return false;
+                }else{
+                    alert("Registration Successful");
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <h3>Registration Form</h3>
+        <form name="myform" action="" onsubmit="return validate()">
+            Email: <input type="text" name="email"/>
+            Password: <input type="password" name="password"/>
+            <input type="submit" name="register"/>
+        </form>
+
+    </body>
+</html>

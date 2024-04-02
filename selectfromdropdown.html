@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title>Select from dropdown Validation</title>
+        <script>
+            
+            function validate(){
+                var x = document.myform.colors.value;
+                if(x ==""){
+                    alert("Please select a color");
+                    document.myform.colors.focus();
+                    return false;
+                }else {
+                    alert("Validation succeeded");
+                    return true;
+                }
+            }
+           
+        </script>
+    </head>
+    <body>
+        <h3>Select a color</h3>
+        <form name="myform" action="" onsubmit="return validate()" >
+            <select name="colors">
+                <option >Select a colour</option>
+                <option  value="Black">Black</option>
+                <option  value="Red">Red</option>
+                <option  value="Blue">Blue</option>
+            </select>
+           
+            <input type="submit" name="register"/>
+        </form>
+
+    </body>
+</html>

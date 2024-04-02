@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title>Validation with the hellp of Regular Expressions</title>
+        <script>
+            
+            function validate(){
+                var valid = false;
+                var exp = /^[a-zA-Z]+$/;
+                var usernName = document.myform.uname.value;
+                var result = exp.test(usernName);
+                if(result){
+                    alert("Validation is successful!");
+                }else{
+                    alert("Invalid username");
+                    document.myform.uname.focus();
+                    return false;
+                }
+            }
+           
+        </script>
+    </head>
+    <body>
+        <h3>User Registration</h3>
+        <form name="myform" action="" onsubmit="return validate()" >
+                User Nmae: <input type="text"  name="uname" />
+                <input type="submit" name="submit"/>
+        </form>
+
+    </body>
+</html>

@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>Text Field Validation Using Regular Expressions</title>
+        <script>
+            function validate(){
+                //mail 
+                //alphanumeric(5,8)
+                //phone numeric(10)
+
+                var expmail=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                var exppass=/^[A-Za-z0-9\s]{5,8}$/
+                var expphone=/^[0-9]{10}/
+                var mail=document.myform.email.value;
+                var pass=document.myform.password.value;
+                var phone=document.myform.phone.value;
+                var bmail= false;
+                var bpass= false;
+                var bphone= false;
+
+             try{  
+                if (mail==""){
+                    alert("Please enter an e-mail addres");
+                    document.myform.email.focus();
+                    return false;
+                }
+                if (pass==""){
+                    alert("Please enter a password");
+                    document.myform.password.focus();
+                    return false;
+            }
+                if (phone==""){
+                    alert("Please enter a phone number");
+                    document.myform.phone.focus();
+                    return false;
+            }
+                if (expmail.test(mail)&&exppass.test(pass)&&expphone.test(phone)){
+                    alert("You did it")
+                    return true;
+                }
+                 if(expmail.test(mail)){
+                    
+                    bmail= true;
+                }else{
+                    alert("Please enter a valid email adress");
+                    document.myform.email.focus();
+                    return false;
+                }
+                 if(exppass.test(pass)){
+                    bpass= true;
+                }else{
+                    alert("Please enter an alpha numerical password between 5-8 characters");
+                    document.myform.password.focus();
+                    return false;
+                }
+                 if(expphone.test(phone)){
+                    bphone= true;
+                }else{
+                    alert("Please make sure it is 10 numerical digits");
+                    document.myform.phone.focus();
+                    return false;
+                }
+            if (bmail&&bphone&&bpass){
+                confirm("Are you happy with your info?")
+            }}catch(obj){
+                alert(obj.message);
+            }}
+                
+        </script>
+        <body>
+            <h3>User registration</h3>
+            <form name="myform" action="regExpressions.php" onsubmit="return validate()"> 
+               E-mail:<textarea name="email"></textarea>  
+               Password:<textarea name="password"></textarea> 
+               Phone:<textarea name="phone"></textarea>            
+                <input type="submit" value="submit"/>
+                <b id="err"></b><br/>
+            </form>
+        </body>
+    </head>
+</html>
+

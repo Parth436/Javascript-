@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title>Validation with the hellp of Regular Expressions</title>
+        <script>
+            
+            function validate(){
+                var valid = false;
+                var exp = /^[a-zA-Z0-9\s]{3,10}$/;
+                var address = document.myform.address.value;
+                var result = exp.test(address);
+                if(result){
+                    alert("Validation is successful!");
+                }else{
+                    document.getElementById("err").innerHTML ="Please enter valid address";
+                    //document.myform.uname.focus();
+                    return false;
+                }
+            }
+           
+        </script>
+    </head>
+    <body>
+        <h3>User Registration</h3>
+        <form name="myform" action="" onsubmit="return validate()" >
+            Address : <textarea name="address"></textarea>
+            <b id="err"></b><br/>
+            <input type="submit" name="submit"/>
+        </form>
+
+    </body>
+</html>

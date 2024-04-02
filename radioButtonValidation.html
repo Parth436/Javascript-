@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title>Radio Button Validation</title>
+        <script>
+            
+            function validate(){
+                var valid = false;
+                var x = document.myform.paymentmethod;
+                for(var i=0; i<x.length; i++){
+                    if(x[i].checked){
+                        valid = true;
+                        break;
+                    }
+                }
+                if(valid){
+                    alert("Validation Successful");
+                }else{
+                    alert("Please select a valid payment method");
+                    return false;
+                }
+            }
+           
+        </script>
+    </head>
+    <body>
+        <h3>Select Mode Of Payment</h3>
+        <form name="myform" action="" onsubmit="return validate()" >
+            
+               
+                <input type="radio"  name="paymentmethod" value="COD"/>Cash On Delivery
+                <input type="radio"  name="paymentmethod" value="debitcard"/>Credit Card
+                <input type="radio"  name="paymentmethod" value="creditcard"/>Debit Card
+                
+           
+           
+            <input type="submit" name="submit"/>
+        </form>
+
+    </body>
+</html>

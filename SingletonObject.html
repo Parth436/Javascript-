@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title>Custom Singleton object creation using Literal Constructor</title>
+        <script>
+           var blogpost = new function(){
+            this.title = "Ruby on Rails";
+            this.text = "Rapid Web Developement";
+            this.DisplayDetails = function DisplayDetail(){
+                document.write(this.title);
+            }
+           }
+           blogpost.DisplayDetails();
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
